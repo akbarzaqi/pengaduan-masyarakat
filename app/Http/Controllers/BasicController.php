@@ -19,7 +19,7 @@ class BasicController extends Controller
     public function index()
     {
         return view('basic.list', [
-            'title' => 'Basic CRUD',
+            'title' => 'Data Pengguna',
             'users' => User::paginate(10)
         ]);
     }
@@ -48,6 +48,9 @@ class BasicController extends Controller
         User::create([
             'name' => $request->name,
             'last_name' => $request->last_name,
+            'nik' => $request->nik,
+            'telp' => $request->telp,
+            'level' => $request->level,
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
@@ -75,7 +78,7 @@ class BasicController extends Controller
     public function edit(User $basic)
     {
         return view('basic.edit', [
-            'title' => 'Edit User',
+            'title' => 'Edit Pengguna',
             'user' => $basic
         ]);
     }
@@ -94,6 +97,9 @@ class BasicController extends Controller
         }
         $basic->name = $request->name;
         $basic->last_name = $request->last_name;
+        $basic->nik = $request->nik;
+        $basic->telp = $request->telp;
+        $basic->level = $request->level;
         $basic->email = $request->email;
         $basic->save();
 

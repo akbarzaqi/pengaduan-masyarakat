@@ -58,14 +58,13 @@
         </div>
 
         <!-- Nav Item -->
-        <li class="nav-item {{ Nav::isRoute('basic.index') }}">
+        {{-- <li class="nav-item {{ Nav::isRoute('basic.index') }}">
             <a class="nav-link" href="{{ route('basic.index') }}">
                 <i class="fas fa-fw fa-plus"></i>
-                <span>{{ __('Basic CRUD') }}</span>
+                <span>{{ __('Users') }}</span>
             </a>
-        </li>
+        </li> --}}
 
-        <!-- Nav Item - Profile -->
         <li class="nav-item {{ Nav::isRoute('profile') }}">
             <a class="nav-link" href="{{ route('profile') }}">
                 <i class="fas fa-fw fa-user"></i>
@@ -73,8 +72,50 @@
             </a>
         </li>
 
+         <li class="nav-item {{ Nav::isRoute('basic.index') }}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-plus"></i>
+            <span>{{ __('Users') }}</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Data Pengguna:</h6>
+                <a class="collapse-item" href="{{ route('basic.index') }}">Data Petugas</a>
+                <a class="collapse-item" href="#">Data Masyarakat</a>
+                <h6 class="collapse-header">Registrasi:</h6>
+                 <a class="collapse-item" href="{{ route('basic.create') }}">Tambah User</a>
+            </div>
+        </div>
+    </li>        
+
+        <!-- Nav Item - Profile -->
+        
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Master Data</span>
+        </a>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Tanggapan:</h6>
+                <a class="collapse-item" href="#">Pengaduan Masuk</a>
+                <a class="collapse-item" href="#">Pengaduan Ditolak</a>
+                <a class="collapse-item" href="#">Pengaduan Diterima</a>
+                <a class="collapse-item" href="#">Pengaduan Selesai</a>
+                <h6 class="collapse-header">Registrasi:</h6>
+                 <a class="collapse-item" href="#">Tambah User</a>
+            </div>
+        </div>
+    </li>
+
+        
+        
+
         <!-- Nav Item - About -->
-        <li class="nav-item {{ Nav::isRoute('about') }}">
+        {{-- <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
                 <i class="fas fa-fw fa-hands-helping"></i>
                 <span>{{ __('About') }}</span>
@@ -87,7 +128,7 @@
                 <i class="fas fa-fw fa-book"></i>
                 <span>{{ __('Blank Page') }}</span>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -150,7 +191,7 @@
                     </li>
 
                     <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
+                    {{-- <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
@@ -252,7 +293,7 @@
                             </a>
                             <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <div class="topbar-divider d-none d-sm-block"></div>
 

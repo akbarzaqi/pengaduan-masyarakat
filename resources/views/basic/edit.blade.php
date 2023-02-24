@@ -29,6 +29,46 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="nik">NIK</label>
+                  <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" id="nik" placeholder="NIK" autocomplete="off" value="{{ $user->nik }}">
+                  @error('nik')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="telp">Telp</label>
+                  <input type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" id="last_name" placeholder="Telp" autocomplete="off" value="{{ $user->telp }}">
+                  @error('telp')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="last_name">Level</label>
+                  <select class="form-select form-control @error('level') is-invalid @enderror" name="level" id="level" placeholder="level" autocomplete="off" value="{{ $user->level }}">
+                    
+                    @if ($user->level=='petugas')
+                    <option name="level">pilih level</option>
+                    <option selected value="petugas">Petugas</option>
+                    <option value="masyarakat">Masyarakat</option>
+                    @elseif ($user->level=='masyarakat')
+                    <option name="level">pilih level</option>
+                    <option value="petugas">Petugas</option>
+                    <option selected value="masyarakat">Masyarakat</option>
+                    @else
+                    <option selected name="level">pilih level</option>
+                    <option value="petugas">Petugas</option>
+                    <option value="masyarakat">Masyarakat</option>
+                    @endif
+                    
+                    <select>
+                  @error('level')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') ?? $user->email }}">
                   @error('email')

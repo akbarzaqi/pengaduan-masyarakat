@@ -28,6 +28,34 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="nik">NIK</label>
+                  <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" id="nik" placeholder="NIK" autocomplete="off" value="{{ old('nik') }}">
+                  @error('nik')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="telp">Telp</label>
+                  <input type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" id="last_name" placeholder="Telp" autocomplete="off" value="{{ old('telp') }}">
+                  @error('telp')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="last_name">Level</label>
+                  <select class="form-select form-control @error('level') is-invalid @enderror" name="level" id="level" placeholder="level" autocomplete="off" value="{{ old('level') }}">
+                    <option selected name="level">pilih level</option>
+                    <option value="petugas">Petugas</option>
+                    <option value="masyarakat">Masyarakat</option>
+                    <select>
+                  @error('level')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') }}">
                   @error('email')

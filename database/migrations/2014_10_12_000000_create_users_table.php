@@ -17,6 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->integer('nik');
+            $table->integer('telp');
+            $table->enum('level', ['admin', 'petugas', 'masyarakat'])->default('masyarakat');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
